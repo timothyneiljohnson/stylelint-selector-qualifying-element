@@ -15,6 +15,9 @@ testRule({ noElementWithClass: true }, function(tr) {
   basics(tr);
 
   tr.ok('.class { top: 0; }');
+  tr.ok('div>.class { top: 0; }');
+  tr.ok('div+.class { top: 0; }');
+  tr.ok('div~.class { top: 0; }');
   tr.notOk('div.class { top: 0; }','Avoid qualifying class selectors with an element.');
 });
 
@@ -22,6 +25,9 @@ testRule({ noElementWithId: true }, function(tr) {
   basics(tr);
 
   tr.ok('#id { top: 0; }');
+  tr.ok('div>#id { top: 0; }');
+  tr.ok('div+#id { top: 0; }');
+  tr.ok('div~#id { top: 0; }');
   tr.notOk('div#id { top: 0; }', 'Avoid qualifying id selectors with an element.');
 });
 

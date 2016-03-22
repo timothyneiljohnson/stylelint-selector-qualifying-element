@@ -72,7 +72,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) =>
             ruleName: ruleName,
             result: result,
             node: rule,
-            message: 'Avoid qualifying attribute selectors with an element.'
+            message: 'Avoid qualifying attribute selectors with an element'
           });
         }
         if (options.noElementWithClass && hasClassQualifiedByElement(selectorNoCombinators)) {
@@ -80,7 +80,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) =>
             ruleName: ruleName,
             result: result,
             node: rule,
-            message: 'Avoid qualifying class selectors with an element.'
+            message: 'Avoid qualifying class selectors with an element'
           });
         }
         if (options.noElementWithId && hasIdQualifiedByElement(selectorNoCombinators)) {
@@ -88,7 +88,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) =>
             ruleName: ruleName,
             result: result,
             node: rule,
-            message: 'Avoid qualifying id selectors with an element.'
+            message: 'Avoid qualifying id selectors with an element'
           });
         }
       })

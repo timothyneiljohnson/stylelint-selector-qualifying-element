@@ -8,6 +8,8 @@ const messages = stylelint.utils.ruleMessages(ruleName, {});
 const arrayContains = (searchItem, array) =>
   array.indexOf(searchItem) > -1;
 
+const combinators = ['>', '+', '~'];
+
 module.exports = stylelint.createPlugin(ruleName, (options) =>
   (root, result) => {
     const validOptions = stylelint.utils.validateOptions(result, ruleName, {
@@ -62,7 +64,10 @@ module.exports = stylelint.createPlugin(ruleName, (options) =>
         // Return early if there is interpolation in the selector
         if (/#{.+?}|@{.+?}|\$\(.+?\)/.test(selector)) { return }
 
-        if (options.noElementWithAttribute && hasAttributeQualifiedByElement(selector)) {
+        // Replace combinators with whitespace, as they not relevant to rule
+        const selectorNoCombinators = selector.replace(/>|\+|~/g, ' ');
+
+        if (options.noElementWithAttribute && hasAttributeQualifiedByElement(selectorNoCombinators)) {
           stylelint.utils.report({
             ruleName: ruleName,
             result: result,
@@ -70,7 +75,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) =>
             message: 'Avoid qualifying attribute selectors with an element.'
           });
         }
-        if (options.noElementWithClass && hasClassQualifiedByElement(selector)) {
+        if (options.noElementWithClass && hasClassQualifiedByElement(selectorNoCombinators)) {
           stylelint.utils.report({
             ruleName: ruleName,
             result: result,
@@ -78,7 +83,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) =>
             message: 'Avoid qualifying class selectors with an element.'
           });
         }
-        if (options.noElementWithId && hasIdQualifiedByElement(selector)) {
+        if (options.noElementWithId && hasIdQualifiedByElement(selectorNoCombinators)) {
           stylelint.utils.report({
             ruleName: ruleName,
             result: result,

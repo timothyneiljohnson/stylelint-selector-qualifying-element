@@ -8,7 +8,7 @@ testRule({ noElementWithAttribute: true }, function(tr) {
   basics(tr);
 
   tr.ok('input { top: 0; }');
-  tr.notOk('input[type=\'button\'] { top: 0; }', 'Avoid qualifying attribute selectors with an element.');
+  tr.notOk('input[type=\'button\'] { top: 0; }', 'Avoid qualifying attribute selectors with an element');
 });
 
 testRule({ noElementWithClass: true }, function(tr) {
@@ -18,7 +18,7 @@ testRule({ noElementWithClass: true }, function(tr) {
   tr.ok('div>.class { top: 0; }');
   tr.ok('div+.class { top: 0; }');
   tr.ok('div~.class { top: 0; }');
-  tr.notOk('div.class { top: 0; }','Avoid qualifying class selectors with an element.');
+  tr.notOk('div.class { top: 0; }','Avoid qualifying class selectors with an element');
 });
 
 testRule({ noElementWithId: true }, function(tr) {
@@ -28,7 +28,7 @@ testRule({ noElementWithId: true }, function(tr) {
   tr.ok('div>#id { top: 0; }');
   tr.ok('div+#id { top: 0; }');
   tr.ok('div~#id { top: 0; }');
-  tr.notOk('div#id { top: 0; }', 'Avoid qualifying id selectors with an element.');
+  tr.notOk('div#id { top: 0; }', 'Avoid qualifying id selectors with an element');
 });
 
 function basics(tr) {

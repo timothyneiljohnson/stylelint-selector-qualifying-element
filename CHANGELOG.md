@@ -8,6 +8,6 @@
 
 - Fixed combinator whitespace bug, where `div>.class` would mistakenly throw error.
 
-## 1.0.2
+## 1.0.3
 
 - Updated dependencies.

@@ -1,6 +1,6 @@
 {
   "name": "stylelint-selector-qualifying-element",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A stylelint custom rule to disallow combinations of qualifying elements with id, class or attribute selectors.",
   "main": "index.js",
   "scripts": {

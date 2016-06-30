@@ -2,7 +2,7 @@
 
 const assign = require('object-assign');
 const stylelint = require('stylelint');
-const ruleName = 'selector-qualifying-element';
+const ruleName = 'plugin/selector-qualifying-element';
 const messages = stylelint.utils.ruleMessages(ruleName, {});
 
 const arrayContains = (searchItem, array) =>

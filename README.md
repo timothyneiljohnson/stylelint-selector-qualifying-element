@@ -69,7 +69,7 @@ Example:
     "stylelint-selector-qualifying-element"
   ],
   "rules": {
-    "selector-qualifying-element": {
+    "plugin/selector-qualifying-element": {
       "noElementWithClass": true // Or false
       "noElementWithId": true // Or false
       "noElementWithAttribute": false // Or true
